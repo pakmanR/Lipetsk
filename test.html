@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Тест о Липецке: выберите правильный вариант ответа." />
+  <title>Тест — Липецк</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-test">
+  <header class="hero hero--compact">
+    <nav class="nav container">
+      <a href="index.html" class="logo">Липецк</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">Меню</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#home">Главная</a></li>
+        <li><a href="index.html#history">История</a></li>
+        <li><a href="index.html#sights">Достопримечательности</a></li>
+        <li><a href="index.html#parks">Парки и природа</a></li>
+        <li><a href="index.html#culture">Культура</a></li>
+        <li><a href="quiz.html">Интерактив</a></li>
+        <li><a href="cards.html">Карточки</a></li>
+        <li><a href="test.html" aria-current="page">Тест</a></li>
+      </ul>
+    </nav>
+    <div class="container quiz-page-intro">
+      <p class="eyebrow">Тестовые задания</p>
+      <h1>Викторина с вариантами ответов</h1>
+      <p class="lead">Выберите один вариант. После ответа появятся подсказки к каждому варианту. Нажмите «Далее», чтобы перейти к следующему вопросу.</p>
+    </div>
+  </header>
+
+  <main class="mc-main container">
+    <section id="mcQuizScreen" class="mc-screen" aria-live="polite">
+      <div class="mc-shell">
+        <div class="mc-head">
+          <span class="mc-progress" id="mcProgress">1 / 9</span>
+          <span class="mc-edit-icon" aria-hidden="true" title="Режим обучения">✎</span>
+        </div>
+        <h2 class="mc-question" id="mcQuestion"></h2>
+        <div class="mc-options" id="mcOptions" role="group" aria-labelledby="mcQuestion"></div>
+        <div class="mc-explain-panel" id="mcExplainPanel" hidden></div>
+        <div class="mc-footer">
+          <button type="button" class="mc-btn mc-btn-ghost" id="mcExplainBtn">
+            <span class="mc-btn-icon" aria-hidden="true">💬</span> Объяснить
+          </button>
+          <button type="button" class="mc-btn mc-btn-next" id="mcNextBtn" disabled>Далее</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="mcResultsScreen" class="mc-screen mc-results-screen" hidden aria-labelledby="mcResultsTitle">
+      <div class="mc-shell mc-shell--results">
+        <h2 id="mcResultsTitle">Итоги теста</h2>
+        <p class="mc-results-score" id="mcScoreLine"></p>
+        <p class="mc-results-percent" id="mcPercentLine"></p>
+        <p class="mc-results-msg" id="mcResultMsg"></p>
+        <div class="mc-results-actions">
+          <button type="button" class="mc-btn mc-btn-next" id="mcRetryBtn">Пройти снова</button>
+          <a href="cards.html" class="mc-btn mc-btn-ghost mc-btn-link">Карточки</a>
+          <a href="index.html" class="mc-btn mc-btn-ghost mc-btn-link">На главную</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p><a href="index.html">← Путеводитель</a> · <a href="cards.html">Карточки</a></p>
+    </div>
+  </footer>
+
+  <script src="data-loader.js"></script>
+  <script src="nav.js"></script>
+  <script src="test-quiz.js"></script>
+</body>
+</html>

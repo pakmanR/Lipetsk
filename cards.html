@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Карточки с вопросами о Липецке: переворот и самооценка." />
+  <title>Карточки — Липецк</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-quiz">
+  <header class="hero hero--compact">
+    <nav class="nav container">
+      <a href="index.html" class="logo">Липецк</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">Меню</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#home">Главная</a></li>
+        <li><a href="index.html#history">История</a></li>
+        <li><a href="index.html#sights">Достопримечательности</a></li>
+        <li><a href="index.html#parks">Парки и природа</a></li>
+        <li><a href="index.html#culture">Культура</a></li>
+        <li><a href="quiz.html">Интерактив</a></li>
+        <li><a href="cards.html" aria-current="page">Карточки</a></li>
+        <li><a href="test.html">Тест</a></li>
+      </ul>
+    </nav>
+    <div class="container quiz-page-intro">
+      <p class="eyebrow">Карточки</p>
+      <h1>Вопросы с переворотом</h1>
+      <p class="lead">Кликните по карточке или «Показать ответ», чтобы увидеть ответ. Отметьте, знали вы тему или нет — внизу обновятся итоги.</p>
+    </div>
+  </header>
+
+  <main class="quiz-main container">
+    <div class="flashcard-wrap">
+      <div class="flashcard-shell">
+        <div class="flashcard-topbar">
+          <span class="flash-progress" id="flashProgress">1 / 5</span>
+          <div class="flash-menu">
+            <button type="button" class="icon-dots" id="menuDots" aria-label="Меню" aria-expanded="false">⋮</button>
+            <div class="flash-menu-panel" id="cardMenuPanel" hidden>
+              <button type="button" data-action="reset">Сбросить всё</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flashcard-scene">
+          <div
+            class="flashcard-inner"
+            id="flashcardInner"
+            role="button"
+            tabindex="0"
+            aria-pressed="false"
+            aria-label="Карточка: нажмите, чтобы перевернуть"
+          >
+            <div class="flashcard-face flashcard-front">
+              <p class="flash-question" id="flashQuestion"></p>
+              <button type="button" class="flash-reveal js-flip" id="btnReveal">Показать ответ</button>
+            </div>
+            <div class="flashcard-face flashcard-back">
+              <p class="flash-answer-label">Ответ</p>
+              <p class="flash-answer" id="flashAnswer"></p>
+              <button type="button" class="flash-reveal flash-reveal--back js-flip">Показать вопрос</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="quiz-hint">После просмотра ответа отметьте эту карточку: не больше одной отметки на вопрос (✕ или ✓). На другой карточке можно изменить выбор.</p>
+
+      <div class="flash-controls">
+        <button type="button" class="ctrl-circle" id="btnPrev" aria-label="Предыдущий вопрос">←</button>
+        <button type="button" class="ctrl-pill ctrl-pill--wrong" id="btnWrong" aria-label="Не знал">
+          <span class="ctrl-x" aria-hidden="true">✕</span>
+          <span id="countWrong">0</span>
+        </button>
+        <button type="button" class="ctrl-pill ctrl-pill--right" id="btnRight" aria-label="Знал">
+          <span id="countRight">0</span>
+          <span class="ctrl-check" aria-hidden="true">✓</span>
+        </button>
+        <button type="button" class="ctrl-circle" id="btnNext" aria-label="Следующий вопрос">→</button>
+      </div>
+    </div>
+
+    <section class="cards-results" id="cardsResults" aria-labelledby="cardsResultsTitle">
+      <h2 id="cardsResultsTitle">Итоги по карточкам</h2>
+      <p class="cards-results-lead">Сумма отметок не больше числа карточек: каждой карточке соответствует не более одной оценки.</p>
+      <div class="cards-results-grid">
+        <div class="cards-results-stat cards-results-stat--ok">
+          <span class="cards-results-label">Знал ответ</span>
+          <span class="cards-results-num" id="cardsResultRight">0</span>
+        </div>
+        <div class="cards-results-stat cards-results-stat--bad">
+          <span class="cards-results-label">Нужно повторить</span>
+          <span class="cards-results-num" id="cardsResultWrong">0</span>
+        </div>
+      </div>
+      <p class="cards-results-total" id="cardsResultTotal">Всего отметок: 0</p>
+      <p class="cards-results-msg" id="cardsResultMsg" role="status"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p><a href="index.html">← Путеводитель</a> · <a href="test.html">Тест с вариантами</a></p>
+    </div>
+  </footer>
+
+  <script src="data-loader.js"></script>
+  <script src="nav.js"></script>
+  <script src="quiz-flip.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Путеводитель по Липецку: история, достопримечательности, парки, музеи и викторина." />
+  <title>Липецк: Город лип, воды и железа</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero" id="top">
+    <nav class="nav container">
+      <a href="index.html#top" class="logo">Липецк</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">Меню</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#home">Главная</a></li>
+        <li><a href="index.html#history">История</a></li>
+        <li><a href="index.html#sights">Достопримечательности</a></li>
+        <li><a href="index.html#parks">Парки и природа</a></li>
+        <li><a href="index.html#culture">Культура</a></li>
+        <li><a href="quiz.html">Интерактив</a></li>
+        <li><a href="cards.html">Карточки</a></li>
+        <li><a href="test.html">Тест</a></li>
+      </ul>
+    </nav>
+    <div class="container hero-content" id="home">
+      <p class="guide-loading eyebrow">Загрузка…</p>
+      <div id="guideHero"></div>
+    </div>
+  </header>
+
+  <main id="guideMain">
+    <p class="guide-loading container">Загрузка материалов из папки <code>data</code>…</p>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Липецк — город, где история, культура и природа создают маршрут для любого путешественника.</p>
+    </div>
+  </footer>
+
+  <div
+    id="photoLightbox"
+    class="photo-lightbox"
+    hidden
+    role="dialog"
+    aria-modal="true"
+    aria-label="Просмотр фотографий"
+  >
+    <div class="photo-lightbox__backdrop" tabindex="-1"></div>
+    <button type="button" class="photo-lightbox__close" aria-label="Закрыть">&times;</button>
+    <button type="button" class="photo-lightbox__prev" aria-label="Предыдущее фото" hidden>‹</button>
+    <div class="photo-lightbox__stage">
+      <p class="photo-lightbox__title" id="lightboxTitle" hidden></p>
+      <img class="photo-lightbox__img" src="" alt="" />
+      <p class="photo-lightbox__counter" hidden></p>
+    </div>
+    <button type="button" class="photo-lightbox__next" aria-label="Следующее фото" hidden>›</button>
+  </div>
+
+  <script src="data-loader.js"></script>
+  <script src="gallery.js"></script>
+  <script src="nav.js"></script>
+  <script src="guide.js"></script>
+</body>
+</html>
