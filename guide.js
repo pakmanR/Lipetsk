@@ -283,6 +283,7 @@ async function renderGuide() {
     if (data.sights) mainEl.appendChild(renderPlacesSection(data.sights, false));
     if (data.parks) mainEl.appendChild(renderPlacesSection(data.parks, true));
     if (data.culture) mainEl.appendChild(renderPlacesSection(data.culture, false));
+    if (data.pravoslav) mainEl.appendChild(renderPlacesSection(data.pravoslav, false));
 
     const cta = data.cta;
     if (cta) {
